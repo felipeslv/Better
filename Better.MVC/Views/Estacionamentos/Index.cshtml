@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Better.MVC.ViewModels.EstacionamentoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Check in", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEntrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataSaida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPagar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEntrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataSaida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPagar)
+        </td>
+        <td>
+            @Html.ActionLink("Check Out", "Edit", new { id=item.EstacionamentoId }) 
+        </td>
+    </tr>
+}
+
+</table>

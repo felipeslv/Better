@@ -1,0 +1,31 @@
+﻿@model Better.MVC.ViewModels.EstacionamentoViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>CheckOut</h2>
+
+
+@using (Html.BeginForm("Index", "TabelaValores", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>EstacionamentoViewModel</h4>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Check Out" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar Para Lista", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
